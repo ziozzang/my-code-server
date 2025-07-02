@@ -22,7 +22,7 @@ RUN apt-get update && \
     curl \
     wget \
     unzip \
-    npm htop mc \
+    npm htop mc tmux \
     ssh  python3-pip && \
     apt-get clean autoclean && \
     apt-get autoremove --yes && \
