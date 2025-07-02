@@ -45,7 +45,8 @@ USER vscodeuser
 ENV HOME=/home/vscodeuser
 
 # Install vscode plugins
-RUN code --install-extension saoudrizwan.claude-dev && \
+RUN mkdir -p $HOME/.vscode-server && ln -s $HOME/.vscode/extensions $HOME/.vscode-server/extensions && \
+    code --install-extension saoudrizwan.claude-dev && \
     code --install-extension ms-python.vscode-pylance && \
     code --install-extension ms-python.python && \
     code --install-extension RooVeterinaryInc.roo-cline && \
