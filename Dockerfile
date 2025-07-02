@@ -22,8 +22,8 @@ RUN apt-get update && \
     curl \
     wget \
     unzip \
-    npm \
-    ssh && \
+    npm htop mc \
+    ssh  python3-pip && \
     apt-get clean autoclean && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -45,7 +45,7 @@ USER vscodeuser
 ENV HOME=/home/vscodeuser
 
 # Install vscode plugins
-RUN mkdir -p $HOME/.vscode-server && ln -s $HOME/.vscode/extensions $HOME/.vscode-server/extensions && \
+RUN mkdir -p $HOME/.vscode-server $HOME/.vscode && ln -s $HOME/.vscode-server/extensions $HOME/.vscode/extensions && \
     code --install-extension saoudrizwan.claude-dev && \
     code --install-extension ms-python.vscode-pylance && \
     code --install-extension ms-python.python && \
@@ -60,7 +60,8 @@ RUN mkdir -p $HOME/.vscode-server && ln -s $HOME/.vscode/extensions $HOME/.vscod
     code --install-extension ZainChen.json && \
     code --install-extension MS-CEINTL.vscode-language-pack-ko && \
     code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools && \
-    code --install-extension slightc.pip-manager
+    code --install-extension slightc.pip-manager && \
+    code --install-extension ms-toolsai.jupyter
 
 # Exécutez le script au lancement du conteneur
 ENTRYPOINT ["sh", "/app/start.sh"]
