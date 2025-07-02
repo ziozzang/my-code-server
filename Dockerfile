@@ -56,7 +56,7 @@ USER vscodeuser
 ENV HOME=/home/vscodeuser
 
 # Install vscode plugins
-RUN mkdir -p $HOME/.vscode-server $HOME/.vscode && ln -s $HOME/.vscode-server/extensions $HOME/.vscode/extensions && \
+RUN mkdir -p $HOME/.vscode-server/extensions $HOME/.vscode && ln -s $HOME/.vscode-server/extensions $HOME/.vscode/extensions && \
     code --install-extension saoudrizwan.claude-dev && \
     code --install-extension ms-python.vscode-pylance && \
     code --install-extension ms-python.python && \
