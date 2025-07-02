@@ -28,6 +28,17 @@ RUN apt-get update && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
+RUN wget https://download.docker.com/linux/static/stable/x86_64/docker-28.3.0.tgz && \
+    tar xzvf docker-28.3.0.tgz && \
+    mv docker/docker /usr/bin/ && \
+    rm -rf docker docker-*.tgz
+
+RUN curl -SL https://github.com/docker/compose/releases/download/v2.38.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose && \
+    chmod +x /usr/bin/docker-compose && \
+    apt-get clean autoclean && \
+    apt-get autoremove --yes && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/
+
 # Copy start.sh to the container
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
