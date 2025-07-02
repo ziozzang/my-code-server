@@ -74,7 +74,19 @@ RUN mkdir -p $HOME/.vscode-server/extensions $HOME/.vscode && ln -s $HOME/.vscod
     code --install-extension slightc.pip-manager && \
     code --install-extension ms-toolsai.jupyter && \
     code --install-extension ecmel.vscode-html-css && \
-    code --install-extension p1c2u.docker-compose
+    code --install-extension p1c2u.docker-compose && \
+    code --install-extension ms-azuretools.vscode-containers && \
+    code --install-extension ms-vscode-remote.remote-containers && \
+    code --install-extension ms-azuretools.vscode-docker && \
+    code --install-extension ms-vscode-remote.vscode-remote-extensionpack && \
+    code --install-extension ReprEng.csv && \
+    code --install-extension DotJoshJohnson.xml && \
+    code --install-extension RabinHansda.flask-builder && \
+    code --install-extension formulahendry.code-runner && \
+    code --install-extension eridem.vscode-postman && \
+    code --install-extension magabde.focus-microservice && \
+    code --install-extension damildrizzy.fastapi-snippets && \
+    code --install-extension DhananjaySenday.mcp--inspector
 
 # Exécutez le script au lancement du conteneur
 ENTRYPOINT ["sh", "/app/start.sh"]
