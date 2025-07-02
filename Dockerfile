@@ -72,7 +72,9 @@ RUN mkdir -p $HOME/.vscode-server $HOME/.vscode && ln -s $HOME/.vscode-server/ex
     code --install-extension MS-CEINTL.vscode-language-pack-ko && \
     code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools && \
     code --install-extension slightc.pip-manager && \
-    code --install-extension ms-toolsai.jupyter
+    code --install-extension ms-toolsai.jupyter && \
+    code --install-extension ecmel.vscode-html-css && \
+    code --install-extension p1c2u.docker-compose
 
 # Exécutez le script au lancement du conteneur
 ENTRYPOINT ["sh", "/app/start.sh"]
